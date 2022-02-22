@@ -142,7 +142,35 @@ namespace aula_21_02_2022
 
             #endregion Tipo de Referencia
 
+
+            Teste();
+
             Console.ReadKey();
+        }
+
+        private static void Teste()
+        {
+            Console.WriteLine("Informe seu nome: ");
+
+            string nome = Console.ReadLine().ToUpper();
+            int count = 0;
+
+            for (var i = 0; i < nome.Length; i++)
+            {
+                char caractere = nome[i];
+
+                if (IsVogal(caractere))
+                {
+                    count++;
+                }
+            }
+
+            Console.WriteLine($"Seu nome possui, {count}, vogal(is).");
+        }
+
+        private static bool IsVogal(char caractere)
+        {
+            return caractere.Equals('A') || caractere.Equals('E') || caractere.Equals('I') || caractere.Equals('O') || caractere.Equals('U');
         }
     }
 
